@@ -1,0 +1,2 @@
+# VLSI_PRJ
+16-bit ALU with AND, OR, XOR LOGIC
