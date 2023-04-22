@@ -19,9 +19,9 @@ signal ALU_Result : std_logic_vector (15 downto 0);
 signal tmp: std_logic_vector (16 downto 0);
 
 begin
-   process(A,B,ALU_Sel)
+   process(A,B,ALU_Op)
  begin
-  case(ALU_Sel) is
+  case(ALU_Op) is
   when "000" => -- Addition
    ALU_Result <= A + B ; 
   when "001" => -- Subtraction
@@ -31,11 +31,11 @@ begin
   when "100" => -- Or
    ALU_Result <= A or B ;
   when "110" => -- Xor
-   ALU_Result <= std_logic_vector(unsigned(A) sll N);
+   ALU_Result <= A xor B;
   when others => ALU_Result <= A + B ; 
   end case;
  end process;
  ALU_Out <= ALU_Result; -- ALU out
  tmp <= ('0' & A) + ('0' & B);
- Carryout <= tmp(8); -- Carryout flag
+ Overflow <= tmp(8); -- Carryout flag
 end Behavioral;
