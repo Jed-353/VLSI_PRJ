@@ -5,15 +5,15 @@ use ieee.NUMERIC_STD.all;
 -----------------------------------------------
 ---------- ALU 16-bit VHDL ---------------------
 -----------------------------------------------
-entity ALU is 
+entity ALU_16 is 
     Port (
     A, B     : in  STD_LOGIC_VECTOR(15 downto 0);
     ALU_Op  : in  STD_LOGIC_VECTOR(2 downto 0); 
     ALU_Out   : out  STD_LOGIC_VECTOR(15 downto 0);
     Overflow : out std_logic  
     );
-end ALU; 
-architecture Behavioral of ALU is
+end ALU_16; 
+architecture Behavioral of ALU_16 is
 
 signal ALU_Result : std_logic_vector (15 downto 0);
 signal tmp: std_logic_vector (16 downto 0);

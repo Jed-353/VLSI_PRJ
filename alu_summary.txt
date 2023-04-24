@@ -1,0 +1,16 @@
+/home/zerotoasic/asic_tools/openlane/designs/ALU_16/runs/*
+using latest run:
+/home/zerotoasic/asic_tools/openlane/designs/ALU_16/runs/RUN_2023.04.22_19.56.14
+        tritonRoute_violations :                    0
+              Short_violations :                    0
+             MetSpc_violations :                    0
+            OffGrid_violations :                    0
+            MinHole_violations :                    0
+              Other_violations :                    0
+              Magic_violations :                    0
+            antenna_violations :                    1
+              lvs_total_errors :                    0
+              cvc_total_errors :                   -1
+            klayout_violations :                   -1
+area 40000 um^2
+flow status: flow completed

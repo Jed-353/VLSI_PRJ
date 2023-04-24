@@ -27,9 +27,10 @@ architecture Behavioral of ALU_16_tb is
     END COMPONENT;
     
     --Inputs
-    signal A : STD_LOGIC_VECTOR (15 downto 0);
-    signal B : STD_LOGIC_VECTOR (15 downto 0);
-    signal Op : STD_LOGIC_VECTOR (2 downto 0);
+    signal A : STD_LOGIC_VECTOR (15 downto 0) := x"0000";
+    signal B : STD_LOGIC_VECTOR (15 downto 0) := x"0000";
+    signal Op : STD_LOGIC_VECTOR (2 downto 0) := "000";
+    
     
     --Outputs
     signal Out_sig : STD_LOGIC_VECTOR (15 downto 0);
@@ -39,13 +40,13 @@ architecture Behavioral of ALU_16_tb is
     
 begin
 
-    uut:ALU_16 PORT MAP(
+    uut: ALU_16 PORT MAP(
           A => A ,
           B => B ,
           ALU_Op => Op,
           ALU_Out => Out_sig,
           Overflow => O_flow
-          );
+         );
           
     -- Stimulus
     stim_proc : process
@@ -67,7 +68,24 @@ begin
         
         Op <= "110";
         wait for 10 ns;
-               
+        
+        A <= x"200b";
+        B <= x"0105";
+        
+        Op <= "000";
+        wait for 10 ns;
+        
+        Op <= "001";
+        wait for 10 ns;
+        
+        Op <= "010";
+        wait for 10 ns;
+        
+        Op <= "100";
+        wait for 10 ns;
+        
+        Op <= "110";
+        wait for 10 ns;               
         
     end process;
     
